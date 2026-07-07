@@ -1,0 +1,157 @@
+{
+  "info": {
+    "name": "Hotel Manager API",
+    "_postman_id": "12345678-1234-1234-1234-123456789012",
+    "description": "Hotel Manager REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Home",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/"
+      }
+    },
+    {
+      "name": "Get All Rooms",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/rooms"
+      }
+    },
+    {
+      "name": "Get Room By ID",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/rooms/1"
+      }
+    },
+    {
+      "name": "Add Room",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"roomNumber\":\"101\",\n  \"roomType\":\"Deluxe\",\n  \"price\":2500,\n  \"status\":\"Available\"\n}"
+        },
+        "url": "{{baseUrl}}/rooms"
+      }
+    },
+    {
+      "name": "Update Room",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"roomNumber\":\"101\",\n  \"roomType\":\"Super Deluxe\",\n  \"price\":3000,\n  \"status\":\"Available\"\n}"
+        },
+        "url": "{{baseUrl}}/rooms/1"
+      }
+    },
+    {
+      "name": "Delete Room",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/rooms/1"
+      }
+    },
+    {
+      "name": "Get Customers",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/customers"
+      }
+    },
+    {
+      "name": "Add Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\":\"Rahul\",\n  \"phone\":\"9876543210\",\n  \"email\":\"rahul@gmail.com\"\n}"
+        },
+        "url": "{{baseUrl}}/customers"
+      }
+    },
+    {
+      "name": "Update Customer",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\":\"Rahul Sharma\",\n  \"phone\":\"9999999999\",\n  \"email\":\"rahul@gmail.com\"\n}"
+        },
+        "url": "{{baseUrl}}/customers/1"
+      }
+    },
+    {
+      "name": "Delete Customer",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/customers/1"
+      }
+    },
+    {
+      "name": "Get Bookings",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/bookings"
+      }
+    },
+    {
+      "name": "Add Booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerId\":1,\n  \"roomId\":1,\n  \"checkIn\":\"2026-07-07\",\n  \"checkOut\":\"2026-07-10\"\n}"
+        },
+        "url": "{{baseUrl}}/bookings"
+      }
+    },
+    {
+      "name": "Delete Booking",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/bookings/1"
+      }
+    }
+  ]
+}

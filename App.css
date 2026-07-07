@@ -1,0 +1,481 @@
+/* File Name: frontend/hotelDemo/src/App.css */
+
+/* ===========================================
+   CSS Variables
+=========================================== */
+
+:root{
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --text:#222;
+    --border:#d9d9d9;
+    --primary:#2563eb;
+    --primaryHover:#1d4ed8;
+    --danger:#dc2626;
+    --dangerHover:#b91c1c;
+    --success:#16a34a;
+    --input:#ffffff;
+    --shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* Dark Theme */
+
+.dark{
+    --bg:#121212;
+    --card:#1f1f1f;
+    --text:#f5f5f5;
+    --border:#444;
+    --input:#2b2b2b;
+    --shadow:0 8px 20px rgba(0,0,0,.35);
+}
+
+/* ===========================================
+   Reset
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* ===========================================
+   Main Container
+=========================================== */
+
+.app{
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    transition:.3s;
+}
+
+.container{
+    width:95%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* ===========================================
+   Top Bar
+=========================================== */
+
+.topBar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.topBar h1{
+    font-size:32px;
+}
+
+/* ===========================================
+   Booking Form
+=========================================== */
+
+.bookingForm{
+    background:var(--card);
+    padding:25px;
+    border-radius:12px;
+    box-shadow:var(--shadow);
+    margin-bottom:35px;
+}
+
+.bookingForm h2{
+    margin-bottom:20px;
+}
+
+.bookingForm label{
+    display:block;
+    margin-top:14px;
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+.bookingForm input,
+.bookingForm select{
+    width:100%;
+    padding:12px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    background:var(--input);
+    color:var(--text);
+    outline:none;
+    transition:.25s;
+}
+
+.bookingForm input:focus,
+.bookingForm select:focus{
+    border-color:var(--primary);
+}
+
+/* ===========================================
+   Character Counter
+=========================================== */
+
+.counter{
+    text-align:right;
+    font-size:13px;
+    color:#777;
+    margin-top:5px;
+}
+
+/* ===========================================
+   Buttons
+=========================================== */
+
+.bookingForm button,
+.darkBtn{
+    margin-top:18px;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+    font-size:15px;
+}
+
+.bookingForm button{
+    background:var(--primary);
+    color:white;
+}
+
+.bookingForm button:hover{
+    background:var(--primaryHover);
+}
+
+.cancelBtn{
+    background:#888 !important;
+    margin-left:10px;
+}
+
+.cancelBtn:hover{
+    background:#666 !important;
+}
+
+.darkBtn{
+    background:#111;
+    color:white;
+}
+
+.dark .darkBtn{
+    background:#f5f5f5;
+    color:#111;
+}
+
+/* ===========================================
+   Error Message
+=========================================== */
+
+.error{
+    color:var(--danger);
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+/* ===========================================
+   Booking List Header
+=========================================== */
+
+.bookingList{
+    margin-top:10px;
+}
+
+.listHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:18px;
+}
+
+/* ===========================================
+   Search Box
+=========================================== */
+
+.searchBox{
+    width:280px;
+    max-width:100%;
+    padding:11px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:var(--input);
+    color:var(--text);
+    outline:none;
+}
+
+.searchBox:focus{
+    border-color:var(--primary);
+}
+
+/* ===========================================
+   Last Updated
+=========================================== */
+
+.updated{
+    margin-bottom:18px;
+    color:#666;
+    font-size:14px;
+}/* File Name: frontend/hotelDemo/src/App.css */
+/* ===========================================
+   Continue from Part 4A
+=========================================== */
+
+/* ===========================================
+   Loading Text
+=========================================== */
+
+.loading{
+    text-align:center;
+    margin:30px 0;
+    color:var(--primary);
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* ===========================================
+   Booking Card
+=========================================== */
+
+.card{
+    background:var(--card);
+    border-radius:12px;
+    box-shadow:var(--shadow);
+    padding:20px;
+    margin-bottom:20px;
+
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+/* ===========================================
+   Avatar Circle
+=========================================== */
+
+.avatar{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:var(--primary);
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+    font-weight:bold;
+    flex-shrink:0;
+}
+
+/* ===========================================
+   Booking Details
+=========================================== */
+
+.details{
+    flex:1;
+}
+
+.details h3{
+    margin-bottom:10px;
+    color:var(--primary);
+}
+
+.details p{
+    margin:7px 0;
+    line-height:1.5;
+    word-break:break-word;
+}
+
+.details strong{
+    color:var(--text);
+}
+
+/* ===========================================
+   Action Buttons
+=========================================== */
+
+.actions{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.editBtn,
+.deleteBtn{
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+    font-size:14px;
+}
+
+.editBtn{
+    background:var(--success);
+}
+
+.editBtn:hover{
+    opacity:0.9;
+}
+
+.deleteBtn{
+    background:var(--danger);
+}
+
+.deleteBtn:hover{
+    background:var(--dangerHover);
+}
+
+/* ===========================================
+   Pagination
+=========================================== */
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin:30px 0;
+    flex-wrap:wrap;
+}
+
+.pagination button{
+    border:none;
+    background:var(--primary);
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.pagination button:hover:not(:disabled){
+    background:var(--primaryHover);
+}
+
+.pagination button:disabled{
+    opacity:0.5;
+    cursor:not-allowed;
+}
+
+.pagination span{
+    font-weight:bold;
+}
+
+/* ===========================================
+   Hover Effects
+=========================================== */
+
+input:hover,
+select:hover,
+.searchBox:hover{
+    border-color:var(--primary);
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+/* ===========================================
+   Responsive Design
+=========================================== */
+
+@media (max-width:900px){
+
+    .card{
+        flex-direction:column;
+    }
+
+    .actions{
+        width:100%;
+        flex-direction:row;
+    }
+
+    .actions button{
+        flex:1;
+    }
+
+}
+
+@media (max-width:600px){
+
+    .container{
+        width:94%;
+        padding:15px 0;
+    }
+
+    .topBar{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .topBar h1{
+        font-size:26px;
+    }
+
+    .bookingForm{
+        padding:18px;
+    }
+
+    .listHeader{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .searchBox{
+        width:100%;
+    }
+
+    .avatar{
+        width:60px;
+        height:60px;
+        font-size:20px;
+    }
+
+    .details h3{
+        font-size:20px;
+    }
+
+    .pagination{
+        gap:10px;
+    }
+
+    .pagination button{
+        width:100%;
+    }
+
+}
+
+/* ===========================================
+   Smooth Transitions
+=========================================== */
+
+.app,
+.card,
+.bookingForm,
+input,
+select,
+button,
+.searchBox{
+    transition:all 0.3s ease;
+}
